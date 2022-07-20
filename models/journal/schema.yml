@@ -1,0 +1,11 @@
+
+version: 2
+
+models:
+  - name: journal_amount_by_reason
+    description: "Aggregated credit and debit per reason"
+    columns:
+      - name: debit
+        description: "The absolute value of total debit of a reason"
+        tests:
+          - not_negative

@@ -33,6 +33,7 @@ clean-targets:         # directories to be removed by `dbt clean`
 # using the `{{ config(...) }}` macro.
 models:
   alifetransformed:
+    +materialized: view
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
@@ -40,9 +41,8 @@ models:
 
 seeds:
   alifetransformed:
-    enabled: true
     ledger:
-      column_types:
+      +column_types:
         JOURNAL_ID: VARCHAR(6)
         DEBIT: NUMBER(19,4)
         CREDIT: NUMBER(19,4)
@@ -50,7 +50,7 @@ seeds:
         REASON: VARCHAR(1024)
         DATE: TIMESTAMP_LTZ
     journal:
-      column_types:
+      +column_types:
         ID: VARCHAR(6)
         AMOUNT: NUMBER(19,4)
         REASON: VARCHAR(1024)
