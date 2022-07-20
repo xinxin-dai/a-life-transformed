@@ -36,3 +36,16 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
+
+
+seeds:
+  alifetransformed:
+    enabled: true
+    ledger:
+      column_types:
+        JOURNAL_ID: VARCHAR(6)
+        DEBIT: NUMBER(19,4)
+        CREDIT: NUMBER(19,4)
+        ACCOUNT: VARCHAR(1024)
+        REASON: VARCHAR(1024)
+        DATE: TIMESTAMP_LTZ
