@@ -49,3 +49,8 @@ seeds:
         ACCOUNT: VARCHAR(1024)
         REASON: VARCHAR(1024)
         DATE: TIMESTAMP_LTZ
+    journal:
+      column_types:
+        ID: VARCHAR(6)
+        AMOUNT: NUMBER(19,4)
+        REASON: VARCHAR(1024)
