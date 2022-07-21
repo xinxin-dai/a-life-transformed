@@ -1,10 +1,10 @@
 With ledger AS (
     SELECT
-        date,
+        day as date,
         reason,
         SUM(debit) AS debit,
         SUM(credit) AS credit
-    FROM {{ ref('ledger_amount_by_reason') }}
+    FROM {{ ref('ledger_daily_amount_by_reason') }}
     GROUP BY date, reason
 )
 
@@ -12,7 +12,7 @@ SELECT
     j.date,
     j.reason,
     (l.credit - l.debit) AS ledger_amount,
-    j.amount AS journal_amount
+    (j.credit - j.debit) AS journal_amount
 FROM
 {{ ref('journal_amount_by_reason') }} j
 JOIN ledger l ON j.reason = l.reason AND j.date = l.date
