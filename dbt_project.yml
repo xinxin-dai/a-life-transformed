@@ -38,6 +38,14 @@ models:
     example:
       +materialized: view
 
+vars:
+  alifetransformed:
+    snapshot_year_month: "SUBSTR(CURRENT_DATE(), 0, 7)"
+
+snapshots:
+  alifetransformed:
+    +target_database: 'ALIFETRANSFORMED'
+    +target_schema: 'HACKATHON2022'
 
 seeds:
   alifetransformed:
@@ -54,6 +62,7 @@ seeds:
         ID: VARCHAR(6)
         AMOUNT: NUMBER(19,4)
         REASON: VARCHAR(1024)
+        DATE: TIMESTAMP_LTZ
     card_transactions:
       +column_types:
         ID: VARCHAR(6)
