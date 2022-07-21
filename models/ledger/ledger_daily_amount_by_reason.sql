@@ -12,4 +12,4 @@
     SUM(debit) as debit
 FROM {{ ref('ledger') }}
 GROUP BY day, reason, account
-
+ORDER BY day, reason, account
