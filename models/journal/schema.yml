@@ -6,6 +6,10 @@ models:
     description: "Aggregated credit and debit per reason"
     columns:
       - name: debit
-        description: "The absolute value of total debit of a reason"
+        description: "The absolute value of the debit amount aggregated for each reason"
+        tests:
+          - not_negative
+      - name: credit
+        description: "The absolute value of the credit amount aggregated for each reason"
         tests:
           - not_negative
