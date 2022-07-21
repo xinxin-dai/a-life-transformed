@@ -54,3 +54,9 @@ seeds:
         ID: VARCHAR(6)
         AMOUNT: NUMBER(19,4)
         REASON: VARCHAR(1024)
+    card_transactions:
+      +column_types:
+        ID: VARCHAR(6)
+        EVENTFUNCTION: VARCHAR(1024)
+        EVENTSTATEREASON: VARCHAR(1024)
+        EVENTTYPE: VARCHAR(1024)
