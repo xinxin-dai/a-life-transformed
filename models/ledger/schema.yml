@@ -1,0 +1,6 @@
+
+version: 2
+
+models:
+  - name: ledger_stride_daily_ending_balance
+    description: '{{ doc("ledger_stride_daily_ending_balance") }}'

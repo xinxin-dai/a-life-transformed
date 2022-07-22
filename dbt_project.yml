@@ -34,13 +34,11 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   alifetransformed:
     +materialized: view
-    # Config indicated by + and applies to all files under models/example/
-    example:
-      +materialized: view
 
 vars:
   alifetransformed:
     snapshot_year_month: "SUBSTR(CURRENT_DATE(), 0, 7)"
+    snapshot_date: "CURRENT_DATE()"
 
 snapshots:
   alifetransformed:
